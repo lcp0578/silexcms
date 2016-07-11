@@ -7,13 +7,7 @@ require __DIR__.'/database.php';
  * configure your app for the production environment
  * 
  */
-// [twig]
-$app['twig.path'] = [
-    __DIR__ . '/../../src/views'
-];
-$app['twig.options'] = [
-    'cache' => __DIR__ . '/../../var/cache/twig'
-];
+
 //[assets]
 $app['assets.version'] = 'v0.0.1';
 $app['assets.version_format'] = '%s?version=%s';

@@ -1,8 +1,8 @@
 <?php
 /**
-  * filename
+  * database.php
   *
-  * @package: packname
+  * @package: config
   * @author: lcp0578@gmail.com
   * @date: 2016-07-12 12:04:49
   * @version: 0.0.1
