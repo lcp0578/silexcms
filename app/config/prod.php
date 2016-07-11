@@ -1,5 +1,8 @@
 <?php
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
+
+// include the database configuration
+require __DIR__.'/database.php';
 /**
  * configure your app for the production environment
  * 
@@ -25,40 +28,7 @@ $app['assets.named_packages'] = [
         ]
     ]
 ];
-//[Doctrine DBAL]
-/**
-// $app['db.options'] = [
-//     'driver' => 'pdo_mysql',
-//     'dbname' => 'silex_demo',
-//     'host' => 'localhost',
-//     'port' => 3306,
-//     'user' => 'root',
-//     'password' => 'lcp0578',
-//     'charset' => 'utf8mb4',
-// ];
-**/
 
-//[Doctrine DBAL multiple databases]
-$app['dbs.options'] = [
-    'mysql_read' => [
-        'driver' => 'pdo_mysql',
-        'dbname' => 'silex_demo',
-        'host' => 'localhost',
-        'port' => 3306,
-        'user' => 'root',
-        'password' => 'lcp0578',
-        'charset' => 'utf8mb4',
-    ],
-    'mysql_write' =>[
-        'driver' => 'pdo_mysql',
-        'dbname' => 'silex_demo',
-        'host' => 'localhost',
-        'port' => 3306,
-        'user' => 'root',
-        'password' => 'lcp0578',
-        'charset' => 'utf8mb4',
-    ]
-];
 // Parameters
 $app['assets.host'] = 'http://cnd.lcpeng.cn';
 // Using PdoSessionStorage to store Session in the Database
