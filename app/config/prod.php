@@ -9,16 +9,16 @@ require __DIR__.'/database.php';
  */
 
 //[assets]
-$app['assets.version'] = 'v0.0.1';
+$app['assets.version'] = 'v1024';
 $app['assets.version_format'] = '%s?version=%s';
 $app['assets.named_packages'] = [
     'css' => [
-        'version' => 'css2',
-        'base_path' => '/whatever-makes-sense'
+        'version' => 'vc1024',
+        'base_path' => '/css'
     ],
     'images' => [
         'base_urls' => [
-            'https://img.example.com'
+            '/images'
         ]
     ]
 ];

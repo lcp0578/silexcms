@@ -1,0 +1,9 @@
+{#views/home/index.html.twig#}
+{% extends 'base,html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ asset('/images/foo.png')) }}
+    {{ asset('/css/foo.css', 'css')) }}
+    
+    {{ asset_version('/css/foo1.css')) }}
+{% blockend %}
