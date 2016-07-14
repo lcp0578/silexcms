@@ -14,4 +14,5 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Asset\\' => array($vendorDir . '/symfony/asset'),
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );
