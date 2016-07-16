@@ -5,6 +5,7 @@
         "symfony/asset": "^3.1",
         "monolog/monolog": "^1.20",
         "swiftmailer/swiftmailer": "^5.4",
-        "symfony/translation": "^3.1"
+        "symfony/translation": "^3.1",
+        "silex/web-profiler": "^2.0"
     }
 }
