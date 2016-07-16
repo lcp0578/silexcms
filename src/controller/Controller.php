@@ -8,3 +8,20 @@
   * @version: 0.0.1
   * @copyright: http://lcpeng.cn
   */
+$app->get('/', function () use($app)
+{
+    $name = 'Hello Silex CMS';
+    return $app['twig']->render('home/index.html.twig', array(
+        'name' => $name
+    ));
+});
+
+$app->get('/images/{file}', function ($file) use ($app) {
+    if (!file_exists(__DIR__.'../web/images/'.$file)) {
+        return $app->abort(404, 'The image was not found.');
+    }
+    $stream = function () use ($file) {
+        readfile($file);
+    };
+    return $app->stream($stream, 200, array('Content-Type' => 'image/png'));
+});

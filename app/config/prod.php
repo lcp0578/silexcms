@@ -3,6 +3,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 
 // include the database configuration
 require __DIR__.'/database.php';
+require __DIR__.'/twig.php';
 /**
  * configure your app for the production environment
  * 
@@ -18,7 +19,7 @@ $app['assets.named_packages'] = [
     ],
     'images' => [
         'base_urls' => [
-            '/images'
+            'http://www.silexcms.com/index_dev.php/images'
         ]
     ]
 ];
