@@ -23,5 +23,6 @@ $app->extend('twig', function($twig, $app){
      * @var $twig 
      */
     $twig->addGlobal('PI', 3.1415);
-    //$twig->addFilter('lcpeng', new \Twig_Filter_Function('lcpeng'));
+    $twig->addFilter('lcpeng', new \Twig_Filter_Function('lcpeng'));
+    return $twig;
 });
