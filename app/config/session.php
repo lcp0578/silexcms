@@ -13,7 +13,7 @@ $app['session.db_options'] = array(
     'db_table' => 'silex_session',
     'db_id_col' => 'sess_id',
     'db_data_col' => 'sess_data',
-    'db_time_col' => 'sess_lieftime'
+    'db_time_col' => 'sess_lifetime'
 );
 
 $app['pdo'] = function () use ($app) {
