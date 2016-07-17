@@ -10,11 +10,11 @@
  */
 $app->get('/', function () use($app)
 {
-    session_start();
-    $_SESSION['silex'] = 'Test';
+//     session_start();
+//     $_SESSION['silex'] = 'Test';
     $name = 'Hello Silex CMS';
     return $app['twig']->render('home/index.html.twig', array(
-        'name' => $name . $_SESSION['silex']
+        'name' => $name
     ));
 });
 
