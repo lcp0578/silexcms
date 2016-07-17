@@ -4,6 +4,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 // include the database configuration
 require __DIR__.'/database.php';
 require __DIR__.'/twig.php';
+require __DIR__.'/session.php';
 /**
  * configure your app for the production environment
  * 
@@ -26,33 +27,8 @@ $app['assets.named_packages'] = [
 
 // Parameters
 $app['assets.host'] = 'http://cnd.lcpeng.cn';
-// Using PdoSessionStorage to store Session in the Database
-$app['pdo.dsn'] = 'mysql:dbname=silex';
-$app['pdo.user'] = 'root';
-$app['pdo.password'] = 'lcp0578';
 
-$app['session.db_options'] = array(
-    'db_table' => 'silex_session',
-    'db_id_col' => 'session_id',
-    'db_data_col' => 'session_value',
-    'db_time_col' => 'session_time'
-);
 
-$app['pdo'] = function () use ($app){
-    return new PDO(
-        $app['pdo.dsn'],
-        $app['pdo.user'], 
-        $app['pdo.password']
-    );
-};
-
-$app['session.storage.hander'] = function() use ($app){
-  return new PdoSessionHandler(
-      $app['pdo'],
-      $app['session.db_options'],
-      $app['session.storage.options']
-      );
-};
 //[Global Configuration for controllers]
 /**
  * If a controller setting must be applied to all controllers 

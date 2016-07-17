@@ -1,6 +1,6 @@
 <?php
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
-// configure PDO session handler
+// Using PdoSessionStorage to store Session in the Database
 $app['pdo.dsn'] = 'mysql:dbname=silexcms';
 $app['pdo.user'] = 'root';
 $app['pdo.password'] = 'lcp0578';
