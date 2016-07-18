@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 require __DIR__.'/database.php';
 require __DIR__.'/twig.php';
 require __DIR__.'/session.php';
+require __DIR__.'/swiftmailer.php';
 /**
  * configure your app for the production environment
  * 
