@@ -17,3 +17,7 @@ $app['swiftmailer.options'] = [
     'encryption' =>  'tls', // tls,ssl,null
     'auth_mode' => 'cram-md5', // plain,login,cram-md5,null
 ];
+$app['swiftmailer.sender_address'] = 'admin@silexcms.com';
+//development
+$app['swiftmailer.delivery_addresses'] = 'lcp0578@gmail.com'; 
+$app['swiftmailer.deliver_whitelist'] = 'lcp0578@163.com';
