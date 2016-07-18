@@ -1,4 +1,6 @@
 <?php
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 /**
  * filename
  *
@@ -30,4 +32,13 @@ $app->get('/images/{file}', function ($file) use($app)
     return $app->stream($stream, 200, array(
         'Content-Type' => 'image/png'
     ));
+});
+$app->post('/feddback', function(Request $request) use ($app){
+    $message = \Swift_Message::newInstance()
+        ->setSubject('[silexcms] Feddback')
+        ->setFrom(array('noreply@silexcms.com'))
+        ->setTo('feedback@silexcms.com')
+        ->setBody($request->get('message'));
+    $app['mailer']->send($message);
+    return new Response('Thanks you for your feedback', 201);
 });
