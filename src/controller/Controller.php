@@ -1,6 +1,4 @@
 <?php
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 /**
  * filename
  *
@@ -10,6 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
  * @version: 0.0.1
  * @copyright: http://lcpeng.cn
  */
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraint as Assert;
+
 $app->get('/', function () use($app)
 {
     session_start();
@@ -41,4 +43,12 @@ $app->post('/feddback', function(Request $request) use ($app){
         ->setBody($request->get('message'));
     $app['mailer']->send($message);
     return new Response('Thanks you for your feedback', 201);
+});
+$app->get('/validate/{email}', function ($email) use ($app){
+    $errors = $app['validator']->validate($email, new Assert\Email());
+    if(count($errors)){
+        return new Response(strval($errors));
+    }else{
+        return new Response('The email is valid');
+    }
 });
