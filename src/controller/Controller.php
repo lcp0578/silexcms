@@ -10,7 +10,7 @@
  */
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Validator\Constraint as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 $app->get('/', function () use($app)
 {
